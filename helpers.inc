@@ -40,3 +40,9 @@
 
 %define arg(n) ebp+(4*n)+4
 %define local(n) ebp-(4*n)
+
+%macro exit 1
+    mov eax, 1
+    mov ebx, %1
+    int 0x80
+%endmacro
